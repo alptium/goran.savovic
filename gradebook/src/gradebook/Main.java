@@ -23,7 +23,7 @@ public class Main {
 		String studentsLastname5 = "Anic";
 		int grade5 = 9;
 		
-		int gradeSum = (grade1 + grade2 + grade3 + grade4 + grade5);
+		int gradeSum = grade1 + grade2 + grade3 + grade4 + grade5;
 		System.out.println("The sum of the students' grades is "+gradeSum);
 	}
 
