@@ -47,6 +47,13 @@ public class Main {
 			double grade5 = sc.nextDouble();
 		
 			double totalGrade = (grade1 + grade2 + grade3 + grade4 + grade5) / 5 ;
+			
+			System.out.println(student1name + student1surname + "grade is" + grade1);
+			System.out.println(student2name + student2surname + "grade is" + grade2);
+			System.out.println(student3name + student3surname + "grade is" + grade3);
+			System.out.println(student4name + student4surname + "grade is" + grade4);
+			System.out.println(student5name + student5surname + "grade is" + grade5);
+			
 			System.out.println("Total grade is :" + totalGrade);
 	}
 	}
