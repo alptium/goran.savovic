@@ -8,53 +8,46 @@ public class Main {
 
 		System.out.println("STUDENT CLASS");
 		System.out.println("Teacher name: Mr Goran Savovic");
+
+		Student students[] = new Student[5];
+
+		try (Scanner sc = new Scanner(System.in)) {
+
+			for (int i = 0; i < students.length; i++) {
+
+				int position = i + 1;
+
+				System.out.println("Enter Student's No. " + position + " Name");
+				String firstName = sc.next();
+				System.out.println("Enter Student's Surname");
+				String lastName = sc.next();
+				System.out.println("Enter Students's Grade");
+				double grade = sc.nextDouble();
+
+				students[i] = new Student(firstName, lastName, grade);
+			}
+
+			double totalGrade = 0.0;
+
+			for (int i = 0; i < students.length; i++) {
+				Student student = students[i];
+				double grade = student.getGrade();
+				totalGrade += grade;
+			}
+
+			double averageGrade = totalGrade / 5;
 	
-		try(Scanner sc = new Scanner(System.in)) {
+			for (int i = 0; i < students.length; i++) {
+				Student student = students[i];
+				String firstName = student.getFirstName();
+				String lastName = student.getLastName();
+				double grade = student.getGrade();
+	
+				System.out.println("First student full name is " + firstName + " " + lastName + " and the grade is " + grade);
+			}
 			
-			System.out.println("Enter Student's No.1 Name");
-			String student1name = sc.next();
-			System.out.println("Enter Student's Surname");
-			String student1surname = sc.next();
-			System.out.println("Enter Students's Grade");
-			double grade1 = sc.nextDouble();
-			
-			System.out.println("Enter Student's No.2 Name");
-			String student2name = sc.next();
-			System.out.println("Enter Student's Surname");
-			String student2surname = sc.next();
-			System.out.println("Enter Student's Grade");
-			double grade2 = sc.nextDouble();
-			
-			System.out.println("Enter Student's No.3 Name");
-			String student3name = sc.next();
-			System.out.println("Enter Student's Surname");
-			String student3surname = sc.next();
-			System.out.println("Enter Student's Grade");
-			double grade3 = sc.nextDouble();
-			
-			System.out.println("Enter Student's No.4 Name");
-			String student4name = sc.next();
-			System.out.println("Enter Student's Surname");
-			String student4surname = sc.next();
-			System.out.println("Enter Student's Grade");
-			double grade4 = sc.nextDouble();
-			
-			System.out.println("Enter Student's No.5 Name");
-			String student5name = sc.next();
-			System.out.println("Enter Student's Surname");
-			String student5surname = sc.next();
-			System.out.println("Enter Student's Grade");
-			double grade5 = sc.nextDouble();
-		
-			double totalGrade = (grade1 + grade2 + grade3 + grade4 + grade5) / 5 ;
-			
-			System.out.println(student1name + " " + student1surname + " grade is " + grade1);
-			System.out.println(student2name + " " + student2surname + " grade is " + grade2);
-			System.out.println(student3name + " " + student3surname + " grade is " + grade3);
-			System.out.println(student4name + " " + student4surname + " grade is " + grade4);
-			System.out.println(student5name + " " + student5surname + " grade is " + grade5);
-			
-			System.out.println("Total grade is :" + totalGrade);
-	}
+			System.out.println("Total grade is : " + totalGrade);
+			System.out.println("Average grade is: " + averageGrade);
+		}
 	}
 }
