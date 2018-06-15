@@ -1,5 +1,6 @@
 package gradebook;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -9,11 +10,15 @@ public class Main {
 		System.out.println("STUDENT CLASS");
 		System.out.println("Teacher name: Mr Goran Savovic");
 
-		Student students[] = new Student[5];
-
+		ArrayList<Student> students = new ArrayList<Student>();
+			
 		try (Scanner sc = new Scanner(System.in)) {
-
-			for (int i = 0; i < students.length; i++) {
+			
+			System.out.println("Enter the number of students");
+			
+			int numStudents = sc.nextInt();
+			
+			for (int i = 0; i < numStudents; i++) {
 
 				int position = i + 1;
 
@@ -24,21 +29,22 @@ public class Main {
 				System.out.println("Enter Students's Grade");
 				double grade = sc.nextDouble();
 
-				students[i] = new Student(firstName, lastName, grade);
+				Student student = new Student(firstName, lastName, grade);
+				students.add(student);
 			}
 
 			double totalGrade = 0.0;
 
-			for (int i = 0; i < students.length; i++) {
-				Student student = students[i];
+			for (int i = 0; i < students.size(); i++) {
+				Student student = students.get(i);
 				double grade = student.getGrade();
 				totalGrade += grade;
 			}
 
-			double averageGrade = totalGrade / 5;
+			double averageGrade = totalGrade / students.size();
 	
-			for (int i = 0; i < students.length; i++) {
-				Student student = students[i];
+			for (int i = 0; i < students.size(); i++) {
+				Student student = students.get(i);
 				String firstName = student.getFirstName();
 				String lastName = student.getLastName();
 				double grade = student.getGrade();
