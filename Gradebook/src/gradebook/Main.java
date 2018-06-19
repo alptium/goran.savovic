@@ -14,6 +14,26 @@ public class Main {
 			
 		try (Scanner sc = new Scanner(System.in)) {
 			
+			// CRUD application
+			
+			// Menu: 
+			// Add a student
+			// Edit a student
+			// Delete a student
+			// Find a student (by index / name)
+			// View all students (listing of all students and grades)
+			// View summary (statistics)
+			// Save & Exit (saving into file --- csv / tab --- or database)
+			// Quit without saving
+			
+			System.out.println("Please select a menu option: ");
+			System.out.println("1. Add a student");
+			System.out.println("2. Edit a student");
+			System.out.println("3. Delete a student");
+			System.out.println("4. Find a student");
+			System.out.println("5. View all students");
+			System.out.println();
+			
 			System.out.println("Enter the number of students");
 			
 			int numStudents = sc.nextInt();
